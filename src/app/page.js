@@ -10,21 +10,20 @@ async function getItems() {
   return resp.json();
 }
 
-async function getTopCharacter() {
-  const resp = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/characters?limit=10`
-  );
-  return resp.json();
-}
+// async function getTopCharacter() {
+//   const resp = await fetch(
+//     `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/characters?limit=10`
+//   );
+//   return resp.json();
+// }
 
 export default async function Home() {
-  const datas = await getItems();
-  const animePopuler = datas.data;
+  const animePopuler = await getItems();
   console.log(animePopuler);
 
-  const getCharacter = await getTopCharacter();
-  const topCharacter = getCharacter.data;
-  console.log(topCharacter);
+  // const getCharacter = await getTopCharacter();
+  // const topCharacter = getCharacter.data;
+  // console.log(topCharacter);
 
   return (
     <>
