@@ -11,19 +11,18 @@ async function getItems(searchId) {
 export default async function SearchIdPage({ params }) {
   // console.log(params);
   const { searchId } = params;
-  console.log(await getItems(searchId));
-  const datas = await getItems(searchId);
+
+  const newParams = decodeURI(searchId);
+
+  // console.log(await getItems(searchId));
+  const datas = await getItems(newParams);
   console.log(datas);
   const animePopuler = datas.data;
 
   return (
     <>
       <main className="py-4 md:px-6 xl:px-8 px-4">
-        <Header
-          title="Top Anime Populer"
-          linkHref={"/populer-anime"}
-          linkTitle={"Lihat Semua ->"}
-        />
+        <Header title={`Daftar pencarian dari ${newParams}...`} />
 
         {/* POPULER ANIME */}
         <section className="grid place-items-center grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">

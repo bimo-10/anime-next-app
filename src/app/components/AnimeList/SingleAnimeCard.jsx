@@ -6,12 +6,12 @@ import React from "react";
 export default function SingleAnimeCard({ api }) {
   return (
     <>
-      {api.map((anime) => {
+      {api?.map((anime) => {
         console.log(anime);
         const { mal_id, title, rank, images, name } = anime;
 
         return (
-          <div className="card w-48 h-96 bg-gray-200 shadow-xl my-4 md:w-56 md:h-[26rem] xl:w-64">
+          <div className="card w-64 h-96 bg-gray-200 shadow-xl my-4 md:h-[26rem]">
             <figure>
               <Image
                 alt={title}

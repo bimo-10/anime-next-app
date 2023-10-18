@@ -7,11 +7,15 @@ export default function InputNavbar() {
   const searchRef = useRef();
   const router = useRouter();
 
-  const [search, setSearch] = useState("");
+  const handleSearch = (eve) => {
+    // console.log(searchRef);
+    if (!searchRef.current.value) return;
+    if (eve.key === "Enter" || eve.type === "click") {
+      eve.preventDefault();
 
-  const handleSearch = () => {
-    const value = searchRef.current.value;
-    router.push(`/search/${value}`);
+      const value = searchRef.current.value;
+      router.push(`/search/${value}`);
+    }
   };
 
   return (
@@ -22,6 +26,7 @@ export default function InputNavbar() {
           placeholder="Search..."
           className="input bg-white w-full text-black xl:h-16 xl:px-8"
           ref={searchRef}
+          onKeyDown={handleSearch}
         />
         <button
           className="absolute top-[5.60rem] end-10 xl:top-14"

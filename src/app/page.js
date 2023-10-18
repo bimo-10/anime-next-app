@@ -37,22 +37,8 @@ export default async function Home() {
         />
 
         {/* POPULER ANIME */}
-        <section className="grid place-items-center grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+        <section className="grid place-items-center grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
           <SingleAnimeCard api={animePopuler} />
-        </section>
-      </main>
-
-      {/* TOP POPULER CHARACTER */}
-      <main className="py-4 md:px-6 xl:px-8 px-4">
-        <Header
-          title="Top Character Populer"
-          linkHref={"/populer-character"}
-          linkTitle={"Lihat Semua ->"}
-        />
-
-        {/* POPULER ANIME */}
-        <section className="grid place-items-center grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
-          <SingleAnimeCard api={topCharacter} />
         </section>
       </main>
     </>

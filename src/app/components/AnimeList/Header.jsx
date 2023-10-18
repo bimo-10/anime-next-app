@@ -6,9 +6,11 @@ export default function Header({ title, linkHref, linkTitle }) {
     <>
       <div className="flex justify-between">
         <h1 className="text-xl">{title}</h1>
-        <Link href={linkHref}>
-          <h3 className="hover:text-blue-500">{linkTitle}</h3>
-        </Link>
+        {linkHref || linkTitle ? (
+          <Link href={linkHref}>
+            <h3 className="hover:text-blue-500">{linkTitle}</h3>
+          </Link>
+        ) : null}
       </div>
     </>
   );
