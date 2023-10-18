@@ -23,7 +23,7 @@ export default async function SearchIdPage({ params }) {
         <Header title={`Daftar pencarian dari ${newParams}...`} />
 
         {/* POPULER ANIME */}
-        <section className="grid place-items-center grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+        <section className="grid place-items-center grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
           <SingleAnimeCard api={animePopuler} />
         </section>
       </main>
