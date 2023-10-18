@@ -15,9 +15,7 @@ export default async function SearchIdPage({ params }) {
   const newParams = decodeURI(searchId);
 
   // console.log(await getItems(searchId));
-  const datas = await getItems(newParams);
-  console.log(datas);
-  const animePopuler = datas.data;
+  const animePopuler = await getItems(newParams);
 
   return (
     <>
